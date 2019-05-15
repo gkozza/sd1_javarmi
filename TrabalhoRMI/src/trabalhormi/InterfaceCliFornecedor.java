@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalhormiservidor;
+package trabalhormi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -12,8 +12,8 @@ import java.rmi.RemoteException;
  *
  * @author gustavo.santos
  */
-public interface InterfaceCliConsumidor extends Remote {
-
-    public void notificaDisponibilidade() throws RemoteException;
-
+public interface InterfaceCliFornecedor extends Remote{
+    public void notificaMatch() throws RemoteException;
+    public void negociacao() throws RemoteException;
+    
 }

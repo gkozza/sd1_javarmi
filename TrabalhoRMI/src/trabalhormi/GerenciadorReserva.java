@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalhormiservidor;
+package trabalhormi;
 
 import java.util.HashMap;
 
@@ -17,6 +17,7 @@ public class GerenciadorReserva {
     
     public void setTransfer(CarroCliente c){
         this.transfers.put(c.getNome_cliente_fornecedor(), c);
+        System.out.println("É o louco do " + c.getNome_cliente_fornecedor());
     }
     
     

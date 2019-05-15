@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalhormiservidor;
+package trabalhormi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -27,7 +27,9 @@ class ServImpl extends UnicastRemoteObject implements InterfaceServ  {
     }
 
     // TODO voltar a data de inicio e fim
+    @Override
     public void setCotacoes(String nome, String tipo, int max_passageiros, float preco, String origem, String destino) throws RemoteException {
+        System.out.println("CHAMOU O SET COTACOES");
         CarroCliente c = new CarroCliente();
         c.setNome_cliente_fornecedor(nome);
         c.setTipo(tipo);
