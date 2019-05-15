@@ -6,18 +6,19 @@
 package trabalhormiservidor;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
 
 /**
  *
  * @author gustavo.santos
  */
-class ServImpl implements InterfaceServ {
+class ServImpl extends UnicastRemoteObject implements InterfaceServ  {
     
     
     
     
-    public ServImpl() {
+    public ServImpl() throws RemoteException{
     }
 
     @Override
@@ -25,11 +26,34 @@ class ServImpl implements InterfaceServ {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void setCotacoes(String nome, String tipo_carro, int passageiros_max, float preco) throws RemoteException {
+    // TODO voltar a data de inicio e fim
+    public void setCotacoes(String nome, String tipo, int max_passageiros, float preco, String origem, String destino) throws RemoteException {
+        CarroCliente c = new CarroCliente();
+        c.setNome_cliente_fornecedor(nome);
+        c.setTipo(tipo);
+        c.setOrigem(origem);
+        c.setDestino(destino);
+        c.setMax_passageiros(max_passageiros);
+        //c.setData_inicio(data_inicio);
+        //c.setData_fim(data_fim);
+        
+        
+        GerenciadorReserva gerenciador = new GerenciadorReserva();
+        gerenciador.setTransfer(c);
+        
         
         
     }
+    
+    public CarroCliente getCotacao(CarroCliente c){
+        CarroCliente carroCliente = new CarroCliente();
+        carroCliente = c;
+        return carroCliente;
+    }
+
+    
+    
+    
     
     
     

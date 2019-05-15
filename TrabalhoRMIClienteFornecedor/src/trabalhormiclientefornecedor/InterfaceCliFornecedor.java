@@ -15,6 +15,11 @@ import java.rmi.RemoteException;
 public interface InterfaceCliFornecedor extends Remote{
         public void notificaMatch() throws RemoteException;
         public void negociacao() throws RemoteException;
+        public void getNome() throws RemoteException;
+        public void getTipo() throws RemoteException;
+        public void getPreco()  throws RemoteException;
+        
+        
        
         
         
