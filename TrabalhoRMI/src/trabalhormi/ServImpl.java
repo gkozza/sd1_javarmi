@@ -21,9 +21,17 @@ class ServImpl extends UnicastRemoteObject implements InterfaceServ  {
     public ServImpl() throws RemoteException{
     }
 
-    @Override
-    public void getCotacoes(String itinerario, Date data, String tipo_carro, int passageiros, float preco) throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void getCotacoes(String nome, String origem, String destino ,String tipo_carro, int passageiros, float preco) throws RemoteException {
+        InteresseReserva interesse = new InteresseReserva();
+        interesse.setNome(nome);
+        interesse.setDestino(destino);
+        interesse.setOrigem(origem);
+        interesse.setPreco(preco);
+        interesse.setPassageiros(passageiros);
+        interesse.setTipo_carro(tipo_carro);
+        GerenciadorReserva gerenciador = new GerenciadorReserva();
+        
+    
     }
 
     // TODO voltar a data de inicio e fim
@@ -38,13 +46,8 @@ class ServImpl extends UnicastRemoteObject implements InterfaceServ  {
         c.setMax_passageiros(max_passageiros);
         //c.setData_inicio(data_inicio);
         //c.setData_fim(data_fim);
-        
-        
         GerenciadorReserva gerenciador = new GerenciadorReserva();
-        gerenciador.setTransfer(c);
-        
-        
-        
+        gerenciador.setTransfer(c); 
     }
     
     public CarroCliente getCotacao(CarroCliente c){

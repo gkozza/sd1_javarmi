@@ -13,11 +13,16 @@ import java.util.HashMap;
  */
 public class GerenciadorReserva {
     private final HashMap<String,CarroCliente> transfers = new HashMap<>();
+    private final HashMap<String,InteresseReserva> interesses = new HashMap<>();
+    
     
     
     public void setTransfer(CarroCliente c){
         this.transfers.put(c.getNome_cliente_fornecedor(), c);
-        System.out.println("É o louco do " + c.getNome_cliente_fornecedor());
+    }
+    
+    public void setInteresse(InteresseReserva r){
+        this.interesses.put(r.getNome(), r);
     }
     
     
