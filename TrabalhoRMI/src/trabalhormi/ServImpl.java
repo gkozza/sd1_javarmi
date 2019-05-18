@@ -21,7 +21,9 @@ class ServImpl extends UnicastRemoteObject implements InterfaceServ  {
     public ServImpl() throws RemoteException{
     }
 
+    @Override
     public void getCotacoes(String nome, String origem, String destino ,String tipo_carro, int passageiros, float preco) throws RemoteException {
+        System.out.println("CHAMOU O GETCOTAÇÕES");
         InteresseReserva interesse = new InteresseReserva();
         interesse.setNome(nome);
         interesse.setDestino(destino);
@@ -30,7 +32,7 @@ class ServImpl extends UnicastRemoteObject implements InterfaceServ  {
         interesse.setPassageiros(passageiros);
         interesse.setTipo_carro(tipo_carro);
         GerenciadorReserva gerenciador = new GerenciadorReserva();
-        
+        gerenciador.setInteresse(interesse);
     
     }
 
